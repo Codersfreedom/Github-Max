@@ -1,7 +1,11 @@
 import React from 'react'
+import { useAuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
+import { FaHeart } from 'react-icons/fa';
 
 const LikeProfile = ({userProfile}) => {
-    const { authUser } = false;
+    const { authUser } = useAuthContext();
+
 
 	const isOwnProfile = authUser?.username === userProfile.login;
 

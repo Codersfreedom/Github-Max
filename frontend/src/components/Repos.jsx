@@ -2,7 +2,7 @@ import React from 'react'
 import Repo from './Repo'
 
 const Repos = ({repos,alwaysFullWidth = false}) => {
-  console.log(repos)
+  
     const className = alwaysFullWidth ? "w-full" : "lg:w-2/3 w-full";
   return (
     <div className={`${className} bg-glass rounded-lg px-8 py-6`}>
