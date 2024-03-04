@@ -10,11 +10,7 @@ import Likes from './pages/Likes'
 import { Toaster } from 'react-hot-toast'
 import { useAuthContext } from './context/AuthContext'
 
-// const SignUpPage = lazy(()=> import ("./pages/Signup")  )
-// const LoginPage = lazy(()=> import("./pages/Login"))
-// const LikesPage = lazy(()=> import("./pages/Likes"))
-// const ExplorePage= lazy(()=> import("./pages/Explore"))
-// const HomePage = lazy(()=>import("./pages/Home"))
+
 
 function App() {
 

@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import session from 'express-session';
 import passport from 'passport';
 import cors from 'cors';
+import path from 'path';
 
 import  UserRoutes  from './routes/User.routes.js';
 import  authRoutes  from './routes/auth.routes.js';
@@ -17,7 +18,7 @@ app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: fals
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+const __dirname = path.resolve();
 
 dotenv.config()
 const PORT = process.env.PORT || 5000
@@ -25,6 +26,14 @@ const PORT = process.env.PORT || 5000
 app.use('/api/users',UserRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/explore',exploreRoutes);
+
+
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"frontend","dist","index.html"))
+}) 
+
 
 app.listen(PORT,()=>{
     connectToDB();
