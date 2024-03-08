@@ -1,5 +1,5 @@
 const handleGithubSignup = () => {
-    window.open("http://localhost:8000/api/auth/github", "_self")
+    window.open("https://github-max.onrender.com/api/auth/github", "_self")
   }
 
   export default handleGithubSignup;
